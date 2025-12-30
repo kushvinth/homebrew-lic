@@ -9,20 +9,20 @@ class Lic < Formula
 
   depends_on "python@3.12"
 
-  resource "rich" do
-    url "https://files.pythonhosted.org/packages/source/r/rich/rich-13.7.1.tar.gz"
-    sha256 "e06e0c8f4097c58c6a9d5d87d8c876f44c01dcaa1cbdc1c6d92b8b6f0f5b76c1"
-  end
+resource "rich" do
+  url "https://files.pythonhosted.org/packages/source/r/rich/rich-13.7.1.tar.gz"
+  sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+end
 
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/source/h/httpx/httpx-0.27.0.tar.gz"
-    sha256 "3e46e2d04bcae2cf29e70b8e30b9a5d80b8b0c16b3b58a62f8c02a3c6b1e6e61"
-  end
+resource "httpx" do
+  url "https://files.pythonhosted.org/packages/source/h/httpx/httpx-0.27.0.tar.gz"
+  sha256 "a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"
+end
 
-  resource "questionary" do
-    url "https://files.pythonhosted.org/packages/source/q/questionary/questionary-2.0.1.tar.gz"
-    sha256 "dcb4d8c9b1b2c07aabef67a8b8a16f3cb63e0f9b62c63dc82c9d3ef91e24cbb6"
-  end
+resource "questionary" do
+  url "https://files.pythonhosted.org/packages/source/q/questionary/questionary-2.0.1.tar.gz"
+  sha256 "bcce898bf3dbb446ff62830c86c5c6fb9a22a54146f0f5597d3da43b10d8fc8b"
+end
 
   def install
     virtualenv_install_with_resources
