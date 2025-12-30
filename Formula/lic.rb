@@ -10,7 +10,16 @@ class Lic < Formula
   depends_on "python@3.12"
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, Formula["python@3.12"].opt_bin/"python3.12")
+
+    # Install uv build backend explicitly
+    venv.pip_install "uv_build"
+
+    # Install your project (uses pyproject.toml + uv_build)
+    venv.pip_install buildpath
+
+    # Expose CLI
+    bin.install_symlink libexec/"bin/lic"
   end
 
   test do
